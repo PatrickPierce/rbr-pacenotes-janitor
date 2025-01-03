@@ -91,7 +91,7 @@ def update_strings_file(path: str) -> None:
             for section in REPLACEMENTS:
                 if f"{section}=" in line:
                     new_line = f"{section}={REPLACEMENTS[section]['display']}\n"
-                    if content[i] != new_line:  # Only count if actually different
+                    if content[i] != new_line:
                         old_line = line
                         content[i] = new_line
                         changes_made += 1
@@ -117,7 +117,7 @@ def main():
     setup_logging()
 
     drive = input("Please enter the drive letter (e.g. C): ").upper()
-    folder = input("Please enter the folder path (e.g. Program Files/Game): ")
+    folder = input("Please enter the folder path (e.g. Richard Burns Rally): ")
 
     if not drive or len(drive) != 1 or not drive.isalpha():
         logging.error("Invalid drive letter")
